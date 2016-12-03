@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>音乐app</title>
+		<link rel="stylesheet" href="css/swiper.css" />
+		<link rel="stylesheet" href="css/animate.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<script src="js/zepto.min.js"></script>
+		<script src="js/swiper.jquery.js"></script>
+		<script src="js/swiper.animate1.0.2.min.js"></script>
+		<script src="js/swiper.js"></script>
+		<script src="js/index.js"></script>
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide section1">
+					<div class="bg">
+						<img src="img/1.jpg" alt="">
+					</div>
+					<div class="kuwo ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+						<span>酷我音乐</span>
+					</div>
+				</div>
+				<div class="swiper-slide section2">
+					<div class="bg">
+						<img src="img/2.jpg" alt="">
+					</div>
+					<input type="button" class="download ani" value="下载歌曲" swiper-animate-effect="flash" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				</div>
+				<div class="swiper-slide section3">
+					<div class="bg">
+						<img src="img/3.jpg" alt="">
+					</div>
+					<div class="music ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+						<span>无损音乐</span>
+					</div>
+					<div class="music_text ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+						<span>最好的音质享受，超越CD播放效果</span>
+					</div>
+					<input type="button" class="login" value="注册/登录">
+					<input type="button" class="tiyan" value="立即体验">
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var swiper = new Swiper(".swiper-container",{
+			onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+				swiperAnimateCache(swiper); //隐藏动画元素
+				swiperAnimate(swiper); //初始化完成开始动画
+			},
+			onSlideChangeEnd: function(swiper){
+				swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+			}
+		})
+	</script>
+</html>
